@@ -1,0 +1,18 @@
+.nav-links:last-child {
+  border: 1px solid black;
+  padding: 2px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100px;
+  text-align: center;
+}
+.nav-links {
+  cursor: pointer;
+}
+select {
+  background-color: transparent;
+}
+.card-wrapper:nth-child(2) {
+  background-color: aquamarine;
+}
+
