@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 import BgImage from "../assets/right top.png";
 import Plane from "../assets/plane.png";
 import HeroImage from "../assets/Traveller 1.png";
-import { BsPlayCircleFill, BsPlayFill } from "react-icons/bs";
+import {  BsPlayFill } from "react-icons/bs";
 const Hero = () => {
   return (
     <>
       <img
         src={BgImage}
-        className="absolute right-0 top-0 z-0 w-full md:w-[auto]"
+        className="absolute  right-0 top-0 z-0 w-auto md:w-[auto]"
         alt=""
       />
       <div className="hidden md:block bg-[#D5AEE4] h-[300px] w-[300px] rounded-full absolute top-[-130px] left-[-120px] z-0 opacity-20"></div>
@@ -25,8 +25,8 @@ const Hero = () => {
         className="relative flex flex-col md:flex-row  h-[80vh] justify-center gap-0 md:gap-[100px] p-4 mt-[0em] md:mt-10"
       >
         <motion.div
-          initial={{ x: "-100vw" }}
-          animate={{ x: 0 }}
+          initial={{ y:'-100vh'  }}
+          animate={{ y: 0 }}
           transition={{ type: "spring", delay: 1.7, stiffness: 100, mass: 2 }}
           className="flex  flex-col justify-center w-full md:w-[30%] text-left gap-[20px]"
         >

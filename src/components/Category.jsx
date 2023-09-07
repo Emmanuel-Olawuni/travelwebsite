@@ -37,13 +37,13 @@ const CategoryCard = ({ category }) => {
 
   return (
     <>
-      <motion.div 
-      initial={{opacity: 0}}
-      whileInView={{opacity: 1}}
-      whileHover={{scale: 1.1}}
-  
-      transition={{duration: 1.5, type:'keyframes' }}
-      className="card flex flex-col items-center justify-center h-auto w-[200px] text-center rounded-[5px]  p-3 gap-[10px] shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
+      <motion.div
+        initial={{ opacity: 0, rotateY: -90 }}
+        whileInView={{ opacity: 1, rotateY: 0 }} 
+        viewport={{once:true}}
+        transition={{ duration: 0.4, delay: 0.06 *  id, type: "spring" , staggerChildren:0.4 }}
+        className="card relative flex flex-col items-center justify-center h-auto w-[200px] z-10 text-center rounded-[5px]  p-3 gap-[10px] shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]"
+      >
         <img
           src={icon}
           alt=""
@@ -59,15 +59,16 @@ const CategoryCard = ({ category }) => {
 };
 const Category = () => {
   return (
-    <div className="relative md:mt-[10em]">
-      <h4 className="text-center font-text text-[20px] uppercase font-semibold text-textBody">
-        CATEGORY
+    <div className="relative md:mt-[10em] p-4 mb-[6em]">
+      <h4 className="text-center font-text text-[18px] capitalize font-semibold text-textBody">
+        Category
       </h4>{" "}
       <br />
       <p className="text-center font-heading text-[28px] leading-6 capitalize font-bold text-textBlue">
         We Offer best services
       </p>
-      <div className="flex flex-col md:flex-row items-center justify-center gap-[4em] card-wrapper">
+      <br /> <br />
+      <div className="flex  flex-col md:flex-row items-center justify-center gap-[4em] card-wrapper">
         {Categories.map((x) => (
           <CategoryCard key={x.id} category={x} />
         ))}

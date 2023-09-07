@@ -57,7 +57,7 @@ module.exports = {
       yellow: "#F1A501",
       textBlue: "#14183E",
       textBody: "#5E6282",
-      textHeading: "#1E1D4C",
+      textHeading: "#14183E",
     },
   },
   plugins: [],

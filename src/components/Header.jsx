@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Header.css";
 import { CiMenuFries } from "react-icons/ci";
-
+import {MdCancel} from 'react-icons/md'
 const NavLinks = [
   "Destinations",
   "Hotels",
@@ -85,17 +85,16 @@ const Header = () => {
       </motion.div>
       <div className="flex justify-center items-center relative">
         <motion.div
-          layoutId="2"
           animate={{ opacity: 1 }}
           transition={{
             duration: 1,
-            type: "spring",
+
             stiffness: 3,
             mass: 0.4,
             ease: "easeInOut",
             type: "spring",
           }}
-          className="flex md:hidden  fixed top-0 w-[90%] z-20 justify-between p-4 bg-gray-200  items-center rounded-[10px] shadow-md h-[70px] "
+          className="flex md:hidden   top-0 w-[90%] z-20 justify-between p-4 bg-gray-200  items-center rounded-[10px] shadow-md  "
         >
           <div>
             <motion.svg
@@ -137,8 +136,26 @@ const Header = () => {
           </div>
           <AnimatePresence>
             {toggle && (
-              <motion.div layoutId="4" className="absolute top-[2px] w-full">
-                Check
+              <motion.div
+                layoutId="4"
+                initial={{opacity: 0}}
+                animate={{opacity: 1}}
+                transition={{
+                  type: 'tween',
+                  ease: 'easeIn'
+                }}
+                exit={{opacity: 0}}
+                className="absolute top-0 right-0 w-[auto] bg-gray-100  font-text p-5 h-[400px]  text-end flex flex-col items-end rounded-bl-[15px] shadow-lg justify-around"
+              >
+                <MdCancel size={30} onClick={()=> setToggle(false)} className=" text-red-500 font-bold" />
+                 <br />
+                <ul className=" flex flex-col text-[20px] gap-[10px] font-text font-medium  ">
+                  {NavLinks.map((x, i) => (
+                    <li className="nav-lin" key={i}>
+                      {x}
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             )}
           </AnimatePresence>
